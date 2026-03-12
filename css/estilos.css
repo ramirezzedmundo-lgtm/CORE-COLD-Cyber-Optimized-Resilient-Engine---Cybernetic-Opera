@@ -1,9 +1,23 @@
-/* BLOQUEO DE ALINEACIÓN ZEUS V3 */
-body {
-    display: grid !important;
-    place-items: center !important;
+/* PROTOCOLO VISUAL ZEUS V3 - Fondo */
+html, body {
     margin: 0 !important;
-    overflow: hidden !important; /* Evita que el virus cree barras de desplazamiento */
-    width: 100vw !important;
+    padding: 0 !important;
     height: 100vh !important;
+    width: 100vw !important;
+    
+    /* FONDO DE CIBERSEGURIDAD: Un degradado oscuro y frío */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%) !important;
+    
+    /* El toquecito de la Élite: Una cuadrícula muy sutil para la alineación */
+    background-image: 
+        linear-gradient(0deg, transparent 24%, rgba(30, 255, 188, 0.03) 25%, rgba(30, 255, 188, 0.03) 26%, transparent 27%, transparent 74%, rgba(30, 255, 188, 0.03) 75%, rgba(30, 255, 188, 0.03) 76%, transparent 77%, transparent), 
+        linear-gradient(90deg, transparent 24%, rgba(30, 255, 188, 0.03) 25%, rgba(30, 255, 188, 0.03) 26%, transparent 27%, transparent 74%, rgba(30, 255, 188, 0.03) 75%, rgba(30, 255, 188, 0.03) 76%, transparent 77%, transparent) !important;
+    background-size: 50px 50px !important;
+    
+    /* Asegura que el contenido esté perfectamente CENTRADO */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #ffffff !important;
+    font-family: 'Courier New', Courier, monospace !important; /* Fuente técnica */
 }
