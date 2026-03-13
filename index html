@@ -1,53 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>CORE-COLD Demo</title>
-  <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <title>WAR ROOM - CORE-COLD V3</title>
+    <style>
+        body {
+            background-color: #050a0f;
+            color: #00f2ff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(2, 1sfr);
+            grid-template-rows: repeat(2, 1fr);
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* Estilo de los módulos (las 4 pantallas) */
+        .monitor {
+            border: 2px solid #0044ff;
+            background: rgba(0, 20, 40, 0.8);
+            box-shadow: inset 0 0 20px #0044ff;
+            padding: 20px;
+            position: relative;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid #00f2ff;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        .data-stream {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #00ff41; /* Verde Matrix */
+        }
+
+        .alert {
+            color: #ff0044;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Indicador de estado de la Pirámide */
+        .status-bar {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="carousel">
-    <section class="slide active" id="origen">
-      <h2>El origen inesperado</h2>
-      <p>CORE-COLD nació en una Xbox One S. Si puede proteger en hardware obsoleto, imaginen lo que hace en su empresa.</p>
-    </section>
 
-    <section class="slide" id="diagnostico">
-      <h2>El diagnóstico invisible</h2>
-      <p>Las empresas pierden millones en robo hormiga, caducidad y errores humanos. CORE-COLD detecta esas fugas en tiempo real.</p>
-    </section>
+    <div class="monitor" id="logistics">
+        <h2>🚚 LOGÍSTICA REYNOSA-TAMPICO</h2>
+        <div class="data-stream">
+            UNIT-01: <span id="unit-1-pos">CARRETERA 101 KM 45</span><br>
+            CANDADO: <span style="color: #00ff41;">CERRADO [SECURE]</span><br>
+            SENSORES: <span style="color: #00ff41;">OK</span>
+        </div>
+        <div class="status-bar">GATEKEEPER ACTIVE</div>
+    </div>
 
-    <section class="slide" id="prueba">
-      <h2>La prueba de fuego</h2>
-      <p>En hardware obsoleto, CORE-COLD se auto-repara en milisegundos y aprende de cada transacción.</p>
-    </section>
+    <div class="monitor" id="audit">
+        <h2>🛡️ AUDITORÍA INMUTABLE (RUST)</h2>
+        <div class="data-stream" id="audit-log">
+            [VERIFICANDO HASH...] <br>
+            ID_TX_9942: VALIDADO ✓ <br>
+            ID_TX_9943: VALIDADO ✓ <br>
+            <span class="alert">AVISO: INTENTO DE ACCESO EN TIENDA 04</span>
+        </div>
+        <div class="status-bar">AUDITOR SECURE</div>
+    </div>
 
-    <section class="slide" id="salto">
-      <h2>El salto a la industria</h2>
-      <p>Si protege desde una consola, imaginen lo que hace en miles de sucursales. CORE-COLD convierte pérdidas en activos financieros.</p>
-    </section>
+    <div class="monitor" id="trading">
+        <h2>📈 MERCADOS Y ARANCELES</h2>
+        <div class="data-stream">
+            USD/MXN: 17.04 <br>
+            PETRÓLEO: $78.45 <br>
+            ARANCEL IMPORT: <span style="color: #ffaa00;">REVISIÓN REQUERIDA</span>
+        </div>
+        <div class="status-bar">BRAIN ANALYZER ACTIVE</div>
+    </div>
 
-    <section class="slide" id="comparativa">
-      <h2>Comparativa Anual</h2>
-      <table>
-        <tr><th>Concepto</th><th>Pérdidas actuales</th><th>Recuperación CORE-COLD</th></tr>
-        <tr><td>Robo hormiga</td><td>$12M</td><td>$8.4M</td></tr>
-        <tr><td>Caducidad</td><td>$20M</td><td>$12M</td></tr>
-        <tr><td>Errores humanos</td><td>$18M</td><td>$9M</td></tr>
-        <tr><td><strong>Total</strong></td><td>$50M</td><td><strong>$29.4M</strong></td></tr>
-      </table>
-    </section>
-  </div>
+    <div class="monitor" id="voice-cmd" style="border-color: #ff0044; box-shadow: inset 0 0 20px #ff0044;">
+        <h2>🎙️ COMANDO DE VOZ (BOSS MODE)</h2>
+        <div class="data-stream">
+            ESTADO: <span style="color: #fff;">ESCUCHANDO...</span><br><br>
+            ÚLTIMA ORDEN: <br>
+            <span style="color: #ff0044;">"Bloquear unidad 01 por desviación"</span>
+        </div>
+        <div class="status-bar">CORE-COLD V3 ONLINE</div>
+    </div>
 
-  <div class="controls">
-    <button id="prev">Anterior</button>
-    <button id="next">Siguiente</button>
-  </div>
-
-  <footer class="footer">
-    <p>CORE-COLD: De pérdidas invisibles a ganancias visibles</p>
-  </footer>
-
-  <script src="js/carrusel.js"></script>
+    <script>
+        // Aquí conectaremos luego los WebSockets del Bridge de Go
+        console.log("War Room Dashboard inicializado, Edmundo.");
+    </script>
 </body>
 </html>
