@@ -12,4 +12,4 @@ document.getElementById('prev').addEventListener('click', () => {
   current = (current - 1 + slides.length) % slides.length;
   slides[current].classList.add('active');
 });
-.
+
